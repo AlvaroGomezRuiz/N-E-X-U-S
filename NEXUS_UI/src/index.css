@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* --- 1. CONFIGURACIÓN DE LA FUENTE AUDREY --- */
+/* ¡Importante! Asegúrate de que el archivo de fuente esté en esta ruta */
+@font-face {
+  font-family: 'Audrey';
+  /* Reemplaza la ruta si tu archivo está en otro lugar */
+  src: url('./assets/fonts/Audrey/Audrey-Normal.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  html {
+    /* Suaviza el cambio entre modo claro y oscuro */
+    transition: background-color 0.5s ease, color 0.5s ease;
+  }
+  
+  body {
+    /* --- 2. APLICACIÓN GLOBAL DE LA FUENTE --- */
+    /* Usamos 'font-sans' para aplicar Audrey a TODO el sitio. */
+    /* Esto incluye la caja de texto, como querías. */
+    @apply bg-slate-50 text-slate-900 font-sans; 
+  }
+
+  /* Estilos para el modo oscuro */
+  html.dark body {
+    @apply bg-nexus-dark text-white;
+  }
+}
