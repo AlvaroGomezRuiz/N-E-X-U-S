@@ -1,17 +1,25 @@
-# --- NÚCLEO API ---
-fastapi>=0.109.0
-uvicorn[standard]>=0.27.0
-pydantic>=2.6.0
-pydantic-settings>=2.1.0
-python-dotenv>=1.0.0
-python-multipart>=0.0.9
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+pydantic==2.5.2
+pydantic-settings==2.1.0
+python-multipart==0.0.6
 
-# --- UTILIDADES ---
-requests>=2.31.0
-httpx>=0.26.0
-typing-extensions>=4.9.0
+# --- IA & Datos (EL MOTOR) ---
+transformers==4.35.0
+diffusers==0.24.0
+accelerate==0.24.1
+xformers==0.0.22.post7  # CRÍTICO: Optimización de memoria para RTX 2060
+safetensors==0.4.0
 
-# --- BASES DE DATOS (Fase 2 Preparación) ---
-sqlalchemy>=2.0.25
-psycopg2-binary>=2.9.9
-# qdrant-client  <-- Lo activaremos cuando llegue el M.2
+# --- Bases de Datos ---
+sqlalchemy==2.0.23
+psycopg2-binary==2.9.9
+qdrant-client==1.6.0
+
+# --- Utilidades ---
+python-jose[cryptography]==3.3.0  # Para JWT
+passlib[bcrypt]==1.7.4
+python-dotenv==1.0.0
+requests==2.31.0
+pillow==10.1.0
+numpy==1.26.2
