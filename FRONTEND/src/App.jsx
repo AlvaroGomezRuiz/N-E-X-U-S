@@ -3,8 +3,8 @@ import React, { useState, useEffect } from 'react';
 // 1. IMPORTAMOS LOS DOS MODOS
 // Asegúrate de haber renombrado los archivos como dijimos antes:
 // 'NexusMystery.jsx' (El Orbe/Público) y 'NexusCore.jsx' (El Chat/Trabajo)
-import NexusMystery from './pages/NexusMystery'; 
-import NexusCore from './pages/NexusCore';     
+import NexusMystery from './pages/NexusMystery';
+import NexusCore from './pages/NexusCore';
 
 export default function App() {
   // --- LÓGICA DEL TEMA (LO ANTIGUO) ---
@@ -30,15 +30,15 @@ export default function App() {
   // --- LÓGICA DE DESPLIEGUE (LO NUEVO) ---
   // true = Muestra la Web Misteriosa (Para subir a internet)
   // false = Muestra el Chat Completo (Para trabajar en local)
-  const MODO_PUBLICO = true; 
+  const MODO_PUBLICO = false;
 
   return (
     <div className="relative min-h-screen font-sans bg-slate-100 dark:bg-slate-900 transition-colors duration-500">
-      
+
       {/* ============================================== */}
       {/* INTERRUPTOR DE TEMA (SIEMPRE VISIBLE)          */}
       {/* ============================================== */}
-      <div 
+      <div
         onClick={toggleTheme}
         className={`
           absolute top-8 right-8 z-50 cursor-pointer
@@ -47,7 +47,7 @@ export default function App() {
           ${theme === 'dark' ? 'bg-cyan-900 border border-cyan-500/30' : 'bg-slate-300'}
         `}
       >
-        <div 
+        <div
           className={`
             w-8 h-8 rounded-full shadow-lg transform transition-all duration-500 cubic-bezier(0.4, 0.0, 0.2, 1)
             flex items-center justify-center
@@ -76,7 +76,7 @@ export default function App() {
       ) : (
         <NexusCore />
       )}
-      
+
     </div>
   );
 }

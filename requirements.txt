@@ -1,25 +1,30 @@
-fastapi==0.104.1
-uvicorn[standard]==0.24.0
-pydantic==2.5.2
-pydantic-settings==2.1.0
-python-multipart==0.0.6
+# --- Servidor API (El Esqueleto) ---
+fastapi==0.104.1                # Framework principal para crear la API y las rutas
+uvicorn[standard]==0.24.0       # El motor web que mantiene la API encendida
+pydantic==2.5.2                 # El "Aduanero": Valida que los datos sean correctos
+pydantic-settings==2.1.0        # Gestiona tu archivo config.py y las variables .env
+python-multipart==0.0.6         # Necesario para que el usuario pueda subir fotos
 
-# --- IA & Datos (EL MOTOR) ---
-transformers==4.35.0
-diffusers==0.24.0
-accelerate==0.24.1
-xformers==0.0.22.post7  # CRÍTICO: Optimización de memoria para RTX 2060
-safetensors==0.4.0
+# --- IA & Datos (EL MOTOR DE PENSAMIENTO) ---
+# Nota: Torch y Xformers se configuraron para CUDA 11.8 (RTX 2060)
+torch==2.1.2                    # El Corazón: Motor de cálculo tensorial y GPU
+torchvision==0.16.2             # Los Ojos: Herramientas para procesar imágenes
+torchaudio==2.1.2               # (Dependencia): Se instala junto con Torch
+transformers==4.36.2            # El Cerebro: Librería de HuggingFace para usar CLIP
+diffusers==0.24.0               # (Reserva): Librería para generación (no usada en caza, pero útil)
+accelerate==0.24.1              # El Turbo: Optimiza la carga de modelos pesados
+xformers==0.0.23.post1          # CRÍTICO: Ahorra VRAM en tu tarjeta gráfica NVIDIA
+safetensors==0.4.0              # El Formato: Guarda y carga modelos de forma segura y rápida
 
-# --- Bases de Datos ---
-sqlalchemy==2.0.23
-psycopg2-binary==2.9.9
-qdrant-client==1.6.0
+# --- Bases de Datos (LA MEMORIA) ---
+qdrant-client==1.6.0            # El Teléfono: Conecta tu código con el contenedor Docker
+sqlalchemy==2.0.23              # El Archivero: Gestiona bases de datos SQL (metadatos)
+psycopg2-binary==2.9.9          # El Conductor: Driver para hablar con PostgreSQL
 
-# --- Utilidades ---
-python-jose[cryptography]==3.3.0  # Para JWT
-passlib[bcrypt]==1.7.4
-python-dotenv==1.0.0
-requests==2.31.0
-pillow==10.1.0
-numpy==1.26.2
+# --- Utilidades & Seguridad (HERRAMIENTAS) ---
+python-jose[cryptography]==3.3.0 # Seguridad: Crea tokens de acceso (JWT)
+passlib[bcrypt]==1.7.4          # Seguridad: Encripta contraseñas para que no sean legibles
+python-dotenv==1.0.0            # Lector: Permite leer el archivo oculto .env
+requests==2.31.0                # Mensajero: Permite descargar archivos de internet
+pillow==10.1.0                  # Laboratorio: Permite abrir y redimensionar imágenes
+numpy==1.26.2                   # Calculadora: Maneja las listas gigantes de números (vectores)

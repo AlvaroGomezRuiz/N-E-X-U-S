@@ -1,5 +1,5 @@
 # =======================================================
-# 🔒 NIVEL 1: SEGURIDAD (CRÍTICO)
+# 🔒 NIVEL 1: SEGURIDAD (CRÍTICO - JAMÁS TOCAR)
 # =======================================================
 .env
 .env.local
@@ -7,46 +7,41 @@
 !.env.example
 
 # =======================================================
-# 🐍 NIVEL 2: BACKEND (PYTHON & FASTAPI)
+# 🐍 NIVEL 2: BACKEND (PYTHON)
 # =======================================================
 __pycache__/
 *.pyc
-*.pyo
-*.pyd
 .venv/
 venv/
 env/
-.pytest_cache/
-.coverage
 
 # =======================================================
-# ⚛️ NIVEL 3: FRONTEND (REACT & VITE)
+# 🗑️ NIVEL 3: ARCHIVO Y LIMPIEZA
+# =======================================================
+SCRIPTS VARIOS/
+ARCHIVE/
+CHECKS HECHOS/
+
+# =======================================================
+# ⚛️ NIVEL 4: FRONTEND
 # =======================================================
 node_modules/
-.npm/
 dist/
-dist-ssr/
-*.local
 .DS_Store
 
 # =======================================================
-# 🐳 NIVEL 4: INFRAESTRUCTURA & DATOS
+# 🐳 NIVEL 5: INFRAESTRUCTURA & DATOS (PESADO)
 # =======================================================
-# Bases de datos y almacenamiento persistente
-data/
+DATA/
 qdrant_storage/
 postgres_storage/
 .docker/
 
 # =======================================================
-# 🧠 NIVEL 5: INTELIGENCIA ARTIFICIAL (PESOS)
+# 🧠 NIVEL 6: MODELOS IA
 # =======================================================
-# Modelos pesados (Stable Diffusion XL)
 *.safetensors
 *.ckpt
 *.pth
-*.onnx
 models/
-nexus_core/models/
-# Cache de Hugging Face
 .cache/
